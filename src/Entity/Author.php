@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use App\Repository\AuthorRepository;
@@ -35,7 +37,7 @@ class Author
     public function __construct(
         string $name,
         DateTimeInterface $dateOfBirth,
-        string            $bio
+        string $bio
     ) {
         $this->name = $name;
         $this->dateOfBirth = $dateOfBirth;

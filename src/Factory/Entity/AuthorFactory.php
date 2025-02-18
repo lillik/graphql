@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Entity\Factory;
+declare(strict_types=1);
+
+namespace App\Factory\Entity;
 
 use App\Entity\Author;
 use DateTimeInterface;

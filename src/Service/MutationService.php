@@ -1,26 +1,29 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Service;
 
 use App\Entity\Author;
 use App\Entity\Book;
+use App\Factory\Entity\AuthorFactory;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 
 readonly class MutationService
 {
-
-    public function __construct(private EntityManagerInterface $entityManager)
-    {}
+    public function __construct(private EntityManagerInterface $entityManager, private AuthorFactory $authorFactory)
+    {
+    }
 
     public function createAuthor(array $authorDetails): Author
     {
-        $author = new Author(
-
+        $author = $this->authorFactory->create(
             $authorDetails['name'],
             DateTime::createFromFormat('d/m/Y', $authorDetails['dateOfBirth']),
             $authorDetails['bio']
         );
+
         $this->entityManager->persist($author);
         $this->entityManager->flush();
 

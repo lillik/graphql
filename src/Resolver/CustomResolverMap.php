@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Resolver;
 
 use App\GraphQL\Type\DateTimeType;
@@ -12,12 +14,11 @@ use Overblog\GraphQLBundle\Resolver\ResolverMap;
 
 class CustomResolverMap extends ResolverMap
 {
-
     public function __construct(
         private readonly QueryService $queryService,
         private readonly MutationService $mutationService
-    )
-    {}
+    ) {
+    }
 
     /**
      * @inheritDoc
@@ -25,7 +26,9 @@ class CustomResolverMap extends ResolverMap
     protected function map(): array
     {
         return [
-            'DateTime' => [self::SCALAR_TYPE => function () { return new DateTimeType(); }],
+            'DateTime' => [self::SCALAR_TYPE => function () {
+                return new DateTimeType();
+            }],
             'RootQuery'    => [
                 self::RESOLVE_FIELD => function (
                     $value,

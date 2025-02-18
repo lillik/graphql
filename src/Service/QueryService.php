@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Service;
 
 use App\Entity\Author;
@@ -8,15 +10,13 @@ use App\Repository\AuthorRepository;
 use App\Repository\BookRepository;
 use Doctrine\Common\Collections\Collection;
 
-
-class QueryService
+readonly class QueryService
 {
-
     public function __construct(
         private readonly AuthorRepository $authorRepository,
         private readonly BookRepository $bookRepository
-    )
-    {}
+    ) {
+    }
 
     public function findAuthorById(int $authorId): ?Author
     {

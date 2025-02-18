@@ -73,6 +73,11 @@
         "doctrine/doctrine-fixtures-bundle": "^4.0",
         "fakerphp/faker": "^1.24",
         "overblog/graphiql-bundle": "^1.0",
-        "symfony/maker-bundle": "^1.62"
+        "phpmd/phpmd": "^2.15",
+        "rector/rector": "^2.0",
+        "squizlabs/php_codesniffer": "^3.11",
+        "symfony/maker-bundle": "^1.62",
+        "symplify/easy-coding-standard": "^12.5",
+        "vimeo/psalm": "^6.5"
     }
 }

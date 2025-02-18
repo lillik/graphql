@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DataFixtures;
 
 use App\Entity\Author;
@@ -47,5 +49,4 @@ class BookFixtures extends Fixture
             AuthorFixtures::class,
         ];
     }
-
 }

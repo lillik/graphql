@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\GraphQL\Type;
 
 use DateTime;
@@ -11,7 +13,6 @@ use GraphQL\Type\Definition\ScalarType;
 
 class DateTimeType extends ScalarType
 {
-
     public string $name = 'DateTime';
     /**
      * @inheritDoc
