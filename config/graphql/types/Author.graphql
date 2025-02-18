@@ -1,0 +1,15 @@
+scalar DateTime
+
+type Author {
+    id: ID!
+    name: String!
+    dateOfBirth: DateTime!
+    bio: String!
+    books: [Book!]!
+}
+
+input CreateAuthor {
+    name: String!
+    dateOfBirth: DateTime!
+    bio: String!
+}

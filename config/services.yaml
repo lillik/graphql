@@ -20,5 +20,12 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\Resolver\CustomResolverMap:
+        tags:
+            - { name: overblog_graphql.resolver_map, schema: default }
+    App\GraphQL\Type\DateTimeType:
+        tags:
+            - { name: overblog_graphql.scalar, alias: 'DateTime' }
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
